@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST MITRA - Employee Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .performance-cards {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .status {
+            font-size: 1.2em;
+            color: green;
+        }
+
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .task-list li {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .cctv-feed {
+            background-color: #000;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .bot-alert {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Employee Dashboard</h1>
+    </header>
+
+    <main>
+        <!-- AI Bot Prediction -->
+        <section class="section bot-alert" id="bot-alert">
+            <h2>AI Prediction Bot</h2>
+            <p id="prediction">Loading prediction...</p>
+        </section>
+
+        <!-- Performance Summary -->
+        <section class="section">
+            <h2>Performance Summary</h2>
+            <div class="performance-cards">
+                <div class="card">
+                    <h3>Customers Served</h3>
+                    <p><strong>150</strong> today</p>
+                </div>
+                <div class="card">
+                    <h3>Service Efficiency</h3>
+                    <p class="status">95%</p>
+                </div>
+                <div class="card">
+                    <h3>Average Wait Time</h3>
+                    <p><strong>5 mins</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task Management -->
+        <section class="section">
+            <h2>Today's Tasks</h2>
+            <ul class="task-list">
+                <li>Process incoming parcels</li>
+                <li>Update customer complaints</li>
+                <li>Review daily performance</li>
+            </ul>
+        </section>
+
+        <!-- Live CCTV Feed -->
+        <section class="section cctv-feed">
+            <h2>Live CCTV Feed</h2>
+            <p>Queue Monitoring at Post Office #123</p>
+            <p><strong>Queue Length: 10 people</strong></p>
+            <p>Next Counter Availability: 3 mins</p>
+        </section>
+    </main>
+
+    <script>
+        // Function to simulate AI prediction for customer footfall based on day of the week
+        function aiPredictionBot() {
+            const today = new Date();
+            const dayOfWeek = today.getDay(); // 0 is Sunday, 1 is Monday, and so on
+            let predictionMessage = '';
+
+            if (dayOfWeek === 1) {
+                // Monday logic, assuming first Monday is busy
+                const isFirstMonday = today.getDate() <= 7;
+                if (isFirstMonday) {
+                    predictionMessage = 'Today is the first Monday of the month. Expect a higher number of customers (estimated: 250+).';
+                } else {
+                    predictionMessage = 'It\'s a regular Monday. Expect moderate footfall (estimated: 150 customers).';
+                }
+            } else if (dayOfWeek === 5) {
+                // Friday logic
+                predictionMessage = 'It\'s Friday! Typically, the footfall decreases as people prepare for the weekend (estimated: 100 customers).';
+            } else if (dayOfWeek === 0 || dayOfWeek === 6) {
+                // Weekend logic
+                predictionMessage = 'It\'s the weekend! Footfall is expected to be low (estimated: 50 customers).';
+            } else {
+                // For other weekdays
+                predictionMessage = 'Expect average footfall today (estimated: 120 customers).';
+            }
+
+            document.getElementById('prediction').innerText = predictionMessage;
+        }
+
+        // Call the prediction bot on page load
+        window.onload = aiPredictionBot;
+    </script>
+</body>
+</html>

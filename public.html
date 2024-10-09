@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST MITRA - Public Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .section {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .track-form input {
+            padding: 10px;
+            margin-right: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            flex: 1 1 calc(33.333% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-right: 10px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.2em;
+        }
+
+        .notification-panel {
+            background-color: #f9c74f;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1em;
+            color: #000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Public Dashboard</h1>
+    </header>
+
+    <main>
+        <!-- Notification Panel -->
+        <div class="notification-panel">
+            <h2>Important Updates</h2>
+            <p>New service: Online Passport Services now available!</p>
+        </div>
+
+        <!-- Track Your Request -->
+        <section class="section">
+            <h2>Track Your Requests</h2>
+            <form class="track-form">
+                <label for="tracking-id">Enter Tracking ID:</label>
+                <input type="text" id="tracking-id" name="tracking-id" placeholder="E.g., POST12345" required>
+                <button type="button" class="btn" onclick="trackRequest()">Track</button>
+            </form>
+            <div id="tracking-result"></div>
+        </section>
+
+        <!-- Services Offered -->
+        <section class="section">
+            <h2>Services We Offer</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Parcel Tracking</h3>
+                    <p>Track parcels and shipments with ease.</p>
+                </div>
+                <div class="card">
+                    <h3>Certificate Services</h3>
+                    <p>Apply for birth, death, and other certificates.</p>
+                </div>
+                <div class="card">
+                    <h3>Post Office Locator</h3>
+                    <p>Find the nearest post office and check wait times.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="section">
+            <h2>Contact Us</h2>
+            <p>If you have any queries or concerns, feel free to contact us at <strong>support@postmitra.com</strong> or call our helpline <strong>1800-123-POST</strong>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 POST MITRA. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to track requests
+        function trackRequest() {
+            const trackingId = document.getElementById('tracking-id').value;
+            if (trackingId) {
+                document.getElementById('tracking-result').innerHTML = `
+                    <p>Tracking ID: <strong>${trackingId}</strong> - Status: <strong>In Transit</strong></p>
+                `;
+            } else {
+                alert('Please enter a valid Tracking ID');
+            }
+        }
+    </script>
+</body>
+</html>

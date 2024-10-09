@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Post Homepage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ff5733;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            background-image: url('https://via.placeholder.com/1200x400');
+            background-size: cover;
+            text-align: center;
+            padding: 50px 0; /* Reduced padding for the hero section */
+        }
+        .hero img {
+            width: 1200px; /* Set width to 1200px */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 200px; /* Set a max height to reduce overall size */
+            object-fit: contain; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Space between the logo and text */
+        }
+        .hero h1 {
+            font-size: 3em;
+            color: black; /* Change text color to black */
+            font-weight: normal; /* Set font weight to normal */
+            margin: 0; /* Remove default margin */
+        }
+        .hero button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .quick-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: white;
+        }
+        .quick-info div {
+            text-align: center;
+            width: 20%;
+        }
+        .news {
+            background-color: #e7e7e7;
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        footer a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Indian Post</h1>
+</header>
+
+<div class="hero">
+    <img src="postlogo.png" alt="Indian Post Logo"> <!-- Add the logo here -->
+    <h1>Connecting India, One Letter at a Time</h1>
+    <button onclick="location.href='login.html'">Login</button> <!-- Redirects to login page -->
+</div>
+
+<div class="quick-info">
+    <div>
+        <h2>About Us</h2>
+        <p>Indian Post has been a reliable postal service provider since 1854.</p>
+    </div>
+    <div>
+        <h2>Our Services</h2>
+        <p>We offer various services including Speed Post, Registered Post, and Money Transfers.</p>
+    </div>
+    <div>
+        <h2>Track & Trace</h2>
+        <p>Easily track your parcels and letters online.</p>
+    </div>
+</div>
+
+<div class="news">
+    <h2>Latest News</h2>
+    <p>New services launched for better customer convenience.</p>
+    <p>Special discounts on bulk mailing for e-commerce businesses.</p>
+</div>
+
+<footer>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Contact Us</a>
+</footer>
+
+</body>
+</html>
